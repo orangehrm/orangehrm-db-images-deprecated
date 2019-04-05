@@ -1,0 +1,45 @@
+language: php
+sudo: required
+dist: trusty
+
+stage: test
+env:
+  global:
+  - REPO=orangehrm/orangehrm-environment-images
+  - TAG=mariadb-10.2-orange
+
+  matrix:
+  - TEST=unit
+#  - TEST=functional
+#  - TEST=acceptance
+services:
+- docker
+addons:
+  hosts:
+  - orangehrm
+cache:
+  directories:
+  - vendor
+  - $HOME/.composer/cache
+
+before_install:
+- uname -a
+- php --version
+- docker version
+- composer self-update
+- docker build -t $REPO:$TAG docker-image
+
+install:
+- composer install
+- docker-compose up -d
+
+script: php vendor/bin/codecept run $TEST
+
+jobs:
+  include:
+  - stage: push to dockerhub
+    env:
+    script: skip
+#    after_script:
+#    - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+#    - docker push $REPO:$TAG

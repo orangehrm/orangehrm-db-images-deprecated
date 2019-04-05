@@ -1,0 +1,14 @@
+version: '2'
+services:
+  db:
+    image: orangehrm/orangehrm-environment-images:mariadb-10.2-orange
+    expose:
+    - "3306"
+    volumes:
+    - ./logs:/var/log
+    - /etc/localtime:/etc/localtime
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+    restart: always
+    hostname: orangehrm-dev-db
+    container_name: dev_mysql
