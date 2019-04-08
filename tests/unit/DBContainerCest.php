@@ -97,6 +97,6 @@ class DBContainerCest
     public function testEnvironmentVariable_innodb_additional_mem_pool_size(UnitTester $I){
         $I->wantTo("MySQL 5.5 environment variable test - innodb_additional_mem_pool_size");
         $I->runShellCommand("docker exec dev_mysql mysql -uroot -p1234 -e \"show variables like 'innodb_additional_mem_pool_size'\"");
-        $I->seeInShellOutput("600");
+        $I->seeInShellOutput("1073741824");
     }
 }
