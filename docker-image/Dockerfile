@@ -1,4 +1,4 @@
-FROM mysql:5.5.62
+FROM mysql:5.5
 
 MAINTAINER orangehrm
 LABEL authors = "OrangeHRM TechOps<techops@orangehrm.com>"
