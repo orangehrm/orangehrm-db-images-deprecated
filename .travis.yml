@@ -6,7 +6,7 @@ stage: test
 env:
   global:
   - REPO=orangehrm/orangehrm-db-images
-  - TAG=mysql-5.5-orange
+  - TAG=mysql-5.5
 
   matrix:
   - TEST=unit
