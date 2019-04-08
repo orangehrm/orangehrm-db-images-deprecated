@@ -23,11 +23,11 @@ class DBContainerCest
         $I->seeInShellOutput("true");
     }
 
-//    public function testEnvironmentVariable_max_allowed_packet(UnitTester $I){
-//        $I->wantTo("MySQL 5.5 environment variable test - max_allowed_packet");
-//        $I->runShellCommand("docker exec dev_mysql_55 mysql -uroot -p1234 -e \"show variables like 'max_allowed_packet'\"");
-//        $I->seeInShellOutput("67108864");
-//    }
+    public function testEnvironmentVariable_max_allowed_packet(UnitTester $I){
+        $I->wantTo("MySQL 5.5 environment variable test - max_allowed_packet");
+        $I->runShellCommand("docker exec dev_mysql_55 mysql -uroot -p1234 -e \"show variables like 'max_allowed_packet'\"");
+        $I->seeInShellOutput("67108864");
+    }
 //
 //    public function testEnvironmentVariable_event_scheduler(UnitTester $I){
 //        $I->wantTo("MySQL 5.5 environment variable test - event_scheduler");
