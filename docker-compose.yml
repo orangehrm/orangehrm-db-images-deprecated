@@ -11,4 +11,4 @@ services:
       MYSQL_ROOT_PASSWORD: 1234
     restart: always
     hostname: orangehrm-dev-db
-    container_name: dev_mysql
+    container_name: dev_mysql_55

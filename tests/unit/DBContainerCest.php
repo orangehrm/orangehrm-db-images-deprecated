@@ -11,13 +11,14 @@ class DBContainerCest
     }
 
     public function checkContainerIsRunning(UnitTester $I){
-        sleep(70);
+        sleep(60);
         $I->wantTo("verify MySQL 5.5 container is up and running");
         $I->runShellCommand("docker inspect -f {{.State.Running}} dev_mysql");
         $I->seeInShellOutput("true");
     }
 
     public function testEnvironmentVariable_max_allowed_packet(UnitTester $I){
+        sleep(30);
         $I->wantTo("MySQL 5.5 environment variable test - max_allowed_packet");
         $I->runShellCommand("docker exec dev_mysql mysql -uroot -p1234 -e \"show variables like 'max_allowed_packet'\"");
         $I->seeInShellOutput("67108864");
