@@ -1,7 +1,7 @@
 version: '2'
 services:
   db:
-    image: orangehrm/orangehrm-environment-images:mariadb-10.2-orange
+    image: orangehrm/orangehrm-db-images:mariadb-10.2
     expose:
     - "3306"
     volumes:
