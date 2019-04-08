@@ -5,8 +5,8 @@ dist: trusty
 stage: test
 env:
   global:
-  - REPO=orangehrm/orangehrm-environment-images
-  - TAG=mariadb-10.2-orange
+  - REPO=orangehrm/orangehrm-db-images
+  - TAG=mariadb-10.2
 
   matrix:
   - TEST=unit
