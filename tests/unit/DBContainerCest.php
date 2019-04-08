@@ -18,7 +18,6 @@ class DBContainerCest
     }
 
     public function testEnvironmentVariable_max_allowed_packet(UnitTester $I){
-        sleep(30);
         $I->wantTo("MySQL 5.5 environment variable test - max_allowed_packet");
         $I->runShellCommand("docker exec dev_mysql_55 mysql -uroot -p1234 -e \"show variables like 'max_allowed_packet'\"");
         $I->seeInShellOutput("67108864");
