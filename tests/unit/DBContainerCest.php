@@ -24,7 +24,7 @@ class DBContainerCest
     public function _before(UnitTester $I)
     {
         echo "Sleep for 5 seconds";
-        sleep(5000);
+        sleep(5);
     }
 
     public function _after(UnitTester $I)
