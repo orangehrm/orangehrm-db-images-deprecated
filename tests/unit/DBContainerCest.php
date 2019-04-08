@@ -18,10 +18,9 @@ class DBContainerCest
     }
 
     public function checkMySQLServiceIsRunning(UnitTester $I){
-        $I->wantTo("verify mysql 5.5 service is up and running");
-        $I->runShellCommand("ping -c 60 localhost");
-        $I->runShellCommand("docker exec dev_mysql_55 mysqladmin -uroot -p1234 status");
-        $I->seeInShellOutput("Uptime");
+        $I->wantTo("verify MySQL 5.5 container is up and running");
+        $I->runShellCommand("docker inspect -f {{.State.Running}} dev_mysql_55");
+        $I->seeInShellOutput("true");
     }
 
 //    public function testEnvironmentVariable_max_allowed_packet(UnitTester $I){
