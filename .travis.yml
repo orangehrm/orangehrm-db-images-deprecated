@@ -5,7 +5,7 @@ dist: trusty
 stage: test
 env:
   global:
-  - REPO=orangehrm/orangehrm-environment-images
+  - REPO=orangehrm/orangehrm-db-images
   - TAG=mysql-5.5-orange
 
   matrix:
