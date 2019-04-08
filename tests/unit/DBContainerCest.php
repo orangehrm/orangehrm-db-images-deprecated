@@ -4,6 +4,7 @@ class DBContainerCest
 {
     public function _before(UnitTester $I)
     {
+        sleep(30);
     }
 
     public function _after(UnitTester $I)
