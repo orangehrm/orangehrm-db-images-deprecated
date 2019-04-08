@@ -11,7 +11,7 @@ class DBContainerCest
     }
 
     public function checkContainerIsRunning(UnitTester $I){
-        sleep(60);
+        sleep(70);
         $I->wantTo("verify MySQL 5.5 container is up and running");
         $I->runShellCommand("docker inspect -f {{.State.Running}} dev_mysql");
         $I->seeInShellOutput("true");
