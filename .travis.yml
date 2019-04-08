@@ -36,8 +36,8 @@ install:
 script:
   - docker ps
   - docker logs dev_mysql_55
-#  - php vendor/bin/codecept run $TEST
-#  - docker logs dev_mysql_55
+  - php vendor/bin/codecept run $TEST
+  - docker logs dev_mysql_55
 
 jobs:
   include:
