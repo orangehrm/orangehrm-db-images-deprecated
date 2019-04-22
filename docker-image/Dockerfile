@@ -1,4 +1,4 @@
-FROM mysql:5.6
+FROM mariadb:10.3
 
 MAINTAINER orangehrm
 LABEL authors = "OrangeHRM TechOps<techops@orangehrm.com>"
