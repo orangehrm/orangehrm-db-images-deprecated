@@ -6,7 +6,7 @@ stage: test
 env:
   global:
   - REPO=orangehrm/orangehrm-db-images
-  - TAG=mysql-5.5
+  - TAG=mysql-5.7
 
   matrix:
   - TEST=unit
@@ -33,9 +33,9 @@ install:
 
 script:
   - docker ps
-  - docker logs dev_mysql_55
+  - docker logs dev_mysql_57
   - php vendor/bin/codecept run $TEST
-  - docker logs dev_mysql_55
+  - docker logs dev_mysql_57
 
 jobs:
   include:
